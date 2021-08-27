@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021 The Android Open Source Project.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+
+    <!-- Text Appearance Subtitle1 style -->
+    <style name="TextAppearance.LunchTray.Subtitle1"
+        parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- TextView style -->
+    <style name="Widget.LunchTray.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceSubtitle1</item>
+    </style>
+
+    <!-- Radio Button style -->
+    <style name="Widget.LunchTray.CompoundButton.RadioButton"
+        parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:paddingEnd">@dimen/radio_button_padding</item>
+        <item name="android:paddingStart">@dimen/radio_button_padding</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+    <!-- Button Style for Next Button -->
+    <style name="Widget.Order.Button.Cancel"
+        parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/side_margin</item>
+        <item name="android:text">@string/cancel</item>
+    </style>
+
+    <!-- Button Style for Next Button -->
+    <style name="Widget.Order.Button.Next" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/side_margin</item>
+        <item name="android:text">@string/next</item>
+    </style>
+
+    <!-- TextView Style for Menu Item Info -->
+    <style name="Widget.MenuItem.TextView.Info" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+        <item name="android:paddingStart">@dimen/base_margin</item>
+        <item name="android:paddingEnd">@dimen/base_margin</item>
+        <item name="singleLine">false</item>
+        <item name="android:scrollHorizontally">false</item>
+        <item name="maxLines">5</item>
+    </style>
+
+    <!-- TextView Style for Checkout Item Label -->
+    <style name="Widget.LunchTray.TextView.CheckoutItem.Label"
+        parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- TextView Style for Checkout Item Name -->
+    <style name="Widget.LunchTray.TextView.CheckoutItem.Info"
+        parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/checkout_item_margin</item>
+        <item name="android:layout_marginBottom">@dimen/checkout_item_margin</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- TextView Style for Subtotal -->
+    <style name="Widget.LunchTray.TextView.Subtotal" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/side_margin</item>
+        <item name="android:textAppearance">?attr/textAppearanceSubtitle1</item>
+    </style>
+
+    <!-- Divider style -->
+    <style name="Widget.LunchTray.Divider" parent="@style/Theme.LunchTray">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?attr/dividerHorizontal</item>
+        <item name="android:layout_marginTop">@dimen/base_margin</item>
+    </style>
+
+    <string name="cancel">Cancel</string>
+</resources>

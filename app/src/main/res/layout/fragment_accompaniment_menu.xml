@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021 The Android Open Source Project.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_accompaniment_menu"
+    tools:context=".ui.order.AccompanimentMenuFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.lunchtray.model.OrderViewModel" />
+
+        <!-- TODO: Add the data binding variable for the AccompanimentMenuFragment -->
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/side_margin"
+            android:paddingEnd="@dimen/side_margin"
+            android:paddingBottom="@dimen/side_margin">
+
+            <RadioGroup
+                android:id="@+id/accompaniment_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- TODO: set the accompaniment in the view model when the RadioButton is clicked -->
+                <RadioButton
+                    android:id="@+id/bread"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:text='@{viewModel.menuItems["bread"].name}'
+                    tools:text="Accompaniment 1" />
+
+                <TextView
+                    android:id="@+id/bread_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text='@{viewModel.menuItems["bread"].description}'
+                    tools:text="Accompaniment 1 description" />
+
+                <TextView
+                    android:id="@+id/bread_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="@dimen/base_margin"
+                    android:text='@{viewModel.menuItems["bread"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.LunchTray.Divider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bread_description" />
+
+                <!-- TODO: set the accompaniment in the view model when the RadioButton is clicked -->
+                <RadioButton
+                    android:id="@+id/berries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:text='@{viewModel.menuItems["berries"].name}'
+                    tools:text="Accompaniment 2" />
+
+                <TextView
+                    android:id="@+id/berries_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text='@{viewModel.menuItems["berries"].description}'
+                    tools:text="Accompaniment 2 description" />
+
+                <TextView
+                    android:id="@+id/berries_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="@dimen/base_margin"
+                    android:text='@{viewModel.menuItems["berries"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.LunchTray.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/soup_description" />
+
+                <!-- TODO: set the RadioButton text to the accompaniment name using the view model -->
+                <!-- TODO: set the accompaniment in the view model when the RadioButton is clicked -->
+                <RadioButton
+                    android:id="@+id/pickles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:text='@{viewModel.menuItems["pickles"].name}'
+                    tools:text="Accompaniment 3" />
+
+                <!-- TODO: set the text to the accompaniment description using the view model -->
+                <TextView
+                    android:id="@+id/pickles_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text='@{viewModel.menuItems["pickles"].description}'
+                    tools:text="Accompaniment 3 description" />
+
+                <!-- TODO: set the text to the accompaniment price using the view model -->
+                <TextView
+                    android:id="@+id/pickles_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="@dimen/base_margin"
+                    android:text='@{viewModel.menuItems["pickles"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Widget.LunchTray.Divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/base_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/accompaniment_options" />
+
+            <!-- TODO: set the text to the current subtotal value from the view model -->
+            <TextView
+                android:id="@+id/subtotal"
+                style="@style/Widget.LunchTray.TextView.Subtotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:text="Subtotal $5.00"/>
+
+            <!-- TODO: cancel the order when clicked -->
+            <Button
+                android:id="@+id/cancel_button"
+                style="@style/Widget.Order.Button.Cancel"
+                app:layout_constraintEnd_toStartOf="@id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/next_button" />
+
+            <!-- TODO: go to the next screen when clicked -->
+            <Button
+                android:id="@+id/next_button"
+                style="@style/Widget.Order.Button.Next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintTop_toBottomOf="@id/subtotal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
