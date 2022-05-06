@@ -25,7 +25,9 @@
         <variable
             name="viewModel"
             type="com.example.lunchtray.model.OrderViewModel" />
-
+        <variable
+            name="sideMenuFragment"
+            type="com.example.lunchtray.ui.order.SideMenuFragment" />
         <!-- TODO: Add the data binding variable for the SideMenuFragment -->
     </data>
 
@@ -54,6 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
+                    android:onClick='@{() -> viewModel.setSide("salad")}'
                     android:text='@{viewModel.menuItems["salad"].name}'
                     tools:text="Side 1" />
 
@@ -84,6 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
+                    android:onClick='@{() -> viewModel.setSide("soup")}'
                     android:text='@{viewModel.menuItems["soup"].name}'
                     tools:text="Side 2" />
 
@@ -115,6 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
+                    android:onClick='@{() -> viewModel.setSide("potatoes")}'
                     android:text='@{viewModel.menuItems["potatoes"].name}'
                     tools:text="Side 3" />
 
@@ -145,6 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
+                    android:onClick='@{() -> viewModel.setSide("rice")}'
                     android:text='@{viewModel.menuItems["rice"].name}'
                     tools:text="Side 4" />
 
@@ -176,6 +182,7 @@
             <!-- TODO: set the text to the current subtotal value from the view model -->
             <TextView
                 android:id="@+id/subtotal"
+                android:text="@{@string/subtotal(viewModel.subtotal.toString())}"
                 style="@style/Widget.LunchTray.TextView.Subtotal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider"
@@ -184,6 +191,7 @@
             <!-- TODO: cancel the order when clicked -->
             <Button
                 android:id="@+id/cancel_button"
+                android:onClick="@{() -> sideMenuFragment.cancelOrder()}"
                 style="@style/Widget.Order.Button.Cancel"
                 app:layout_constraintEnd_toStartOf="@id/next_button"
                 app:layout_constraintStart_toStartOf="parent"
@@ -193,6 +201,7 @@
             <Button
                 android:id="@+id/next_button"
                 style="@style/Widget.Order.Button.Next"
+                android:onClick="@{()-> sideMenuFragment.goToNextScreen()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/cancel_button"

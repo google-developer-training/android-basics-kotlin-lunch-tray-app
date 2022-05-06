@@ -16,7 +16,63 @@
   -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/mobile_navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/startOrderFragment">
 
 
+    <fragment
+        android:id="@+id/startOrderFragment"
+        android:name="com.example.lunchtray.ui.order.StartOrderFragment"
+        android:label="fragment_start_order"
+        tools:layout="@layout/fragment_start_order" >
+        <action
+            android:id="@+id/action_startOrderFragment_to_entreeMenuFragment"
+            app:destination="@id/entreeMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entreeMenuFragment"
+        android:name="com.example.lunchtray.ui.order.EntreeMenuFragment"
+        android:label="fragment_entree_menu"
+        tools:layout="@layout/fragment_entree_menu" >
+        <action
+            android:id="@+id/action_entreeMenuFragment_to_sideMenuFragment"
+            app:destination="@id/sideMenuFragment" />
+        <action
+            android:id="@+id/action_entreeMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sideMenuFragment"
+        android:name="com.example.lunchtray.ui.order.SideMenuFragment"
+        android:label="fragment_side_menu"
+        tools:layout="@layout/fragment_side_menu" >
+        <action
+            android:id="@+id/action_sideMenuFragment_to_accompanimentMenuFragment"
+            app:destination="@id/accompanimentMenuFragment" />
+        <action
+            android:id="@+id/action_sideMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accompanimentMenuFragment"
+        android:name="com.example.lunchtray.ui.order.AccompanimentMenuFragment"
+        android:label="fragment_accompaniment_menu"
+        tools:layout="@layout/fragment_accompaniment_menu" >
+        <action
+            android:id="@+id/action_accompanimentMenuFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+        <action
+            android:id="@+id/action_accompanimentMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.example.lunchtray.ui.order.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_checkoutFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
 </navigation>
