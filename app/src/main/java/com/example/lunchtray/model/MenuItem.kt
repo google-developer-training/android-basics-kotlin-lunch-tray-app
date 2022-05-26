@@ -16,6 +16,7 @@
 package com.example.lunchtray.model
 
 import java.text.NumberFormat
+import java.util.*
 
 /**
  * Data class for menu items
@@ -30,5 +31,8 @@ data class MenuItem(
      * Getter method for price.
      * Includes formatting.
      */
-    fun getFormattedPrice(): String = NumberFormat.getCurrencyInstance().format(price)
+    fun getFormattedPrice(): String
+    {
+        return NumberFormat.getCurrencyInstance(Locale.US).format(price)
+    }
 }
