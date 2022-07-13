@@ -49,6 +49,9 @@ android {
         dataBinding true
         viewBinding true
     }
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+    }
 }
 
 dependencies {
@@ -68,4 +71,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
     debugImplementation "androidx.fragment:fragment-testing:1.4.1"
+    androidTestUtil 'androidx.test:orchestrator:1.4.1'
 }
