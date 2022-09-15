@@ -19,6 +19,7 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -140,14 +141,14 @@ class OrderFunctionalityTests : BaseTest() {
         // We already have a test for a single menu item selection, so we don't need to check the
         // subtotal here.
         // Move to next fragment
-        onView(withId(R.id.next_button)).perform(click())
+        onView(withId(R.id.next_button)).perform(scrollTo()).perform(click())
         // Select side item
         onView(withId(R.id.salad)).perform(click())
         // Check that subtotal has updated
         onView(withId(R.id.subtotal))
             .check(matches(withText(containsString("Subtotal: $9.50"))))
         // Move to next fragment
-        onView(withId(R.id.next_button)).perform(click())
+        onView(withId(R.id.next_button)).perform(scrollTo()).perform(click())
         // Select accompaniment item
         onView(withId(R.id.bread)).perform(click())
         // Check that subtotal has updated
@@ -191,7 +192,7 @@ class OrderFunctionalityTests : BaseTest() {
         // Select an item
         onView(withId(R.id.cauliflower)).perform(click())
         // Cancel order
-        onView(withId(R.id.cancel_button)).perform(click())
+        onView(withId(R.id.cancel_button)).perform(scrollTo()).perform(click())
         // Start the order
         onView(withId(R.id.start_order_btn)).perform(click())
         // Make sure subtotal is zero
@@ -210,11 +211,11 @@ class OrderFunctionalityTests : BaseTest() {
         // Select an item
         onView(withId(R.id.cauliflower)).perform(click())
         // Move to side menu
-        onView(withId(R.id.next_button)).perform(click())
+        onView(withId(R.id.next_button)).perform(scrollTo()).perform(click())
         // Select an item
         onView(withId(R.id.soup)).perform(click())
         // Cancel the order
-        onView(withId(R.id.cancel_button)).perform(click())
+        onView(withId(R.id.cancel_button)).perform(scrollTo()).perform(click())
         // Start the order
         onView(withId(R.id.start_order_btn)).perform(click())
         // Make sure subtotal is zero
@@ -233,11 +234,11 @@ class OrderFunctionalityTests : BaseTest() {
         // Select an item
         onView(withId(R.id.cauliflower)).perform(click())
         // Move to side menu
-        onView(withId(R.id.next_button)).perform(click())
+        onView(withId(R.id.next_button)).perform(scrollTo()).perform(click())
         // Select an item
         onView(withId(R.id.soup)).perform(click())
         // Move to accompaniment menu
-        onView(withId(R.id.next_button)).perform(click())
+        onView(withId(R.id.next_button)).perform(scrollTo()).perform(click())
         // Select item
         onView(withId(R.id.bread)).perform(click())
         // Cancel the order
