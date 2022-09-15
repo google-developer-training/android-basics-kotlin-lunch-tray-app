@@ -30,9 +30,9 @@ open class BaseTest {
         // Select entree item
         onView(withId(R.id.cauliflower)).perform(click())
         // Move to next fragment
-        onView(withId(R.id.next_button)).perform(click())
+        onView(withId(R.id.next_button)).perform(scrollTo()).perform(click())
         // Select side item
-        onView(withId(R.id.salad)).perform(click())
+        onView(withId(R.id.salad)).perform(scrollTo()).perform(click())
         // Move to next fragment
         onView(withId(R.id.next_button)).perform(click())
         // Select accompaniment item
