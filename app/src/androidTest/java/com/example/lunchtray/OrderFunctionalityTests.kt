@@ -107,20 +107,20 @@ class OrderFunctionalityTests : BaseTest() {
      */
     @Test
     fun `radio_buttons_update_accompaniment_menu_subtotal`() {
-        // Launch the side menu fragment
+        // Launch the accompaniment menu fragment
         launchFragmentInContainer<AccompanimentMenuFragment>(themeResId = R.style.Theme_LunchTray)
 
-        // Select the salad item
+        // Select the bread item
         onView(withId(R.id.bread)).perform(click())
         onView(withId(R.id.subtotal))
             .check(matches(withText(containsString("Subtotal: $0.50"))))
 
-        // Select the soup item
+        // Select the berries item
         onView(withId(R.id.berries)).perform(click())
         onView(withId(R.id.subtotal))
             .check(matches(withText(containsString("Subtotal: $1.00"))))
 
-        // Select the potato item
+        // Select the pickles item
         onView(withId(R.id.pickles)).perform(click())
         onView(withId(R.id.subtotal))
             .check(matches(withText(containsString("Subtotal: $0.50"))))
