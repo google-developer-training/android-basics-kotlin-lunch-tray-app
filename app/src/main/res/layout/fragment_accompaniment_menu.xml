@@ -114,14 +114,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
-                    android:text='@{viewModel.menuItems["pickles"].name}'
                     tools:text="Accompaniment 3" />
 
                 <!-- TODO: set the text to the accompaniment description using the view model -->
                 <TextView
                     android:id="@+id/pickles_description"
                     style="@style/Widget.MenuItem.TextView.Info"
-                    android:text='@{viewModel.menuItems["pickles"].description}'
                     tools:text="Accompaniment 3 description" />
 
                 <!-- TODO: set the text to the accompaniment price using the view model -->
@@ -129,7 +127,6 @@
                     android:id="@+id/pickles_price"
                     style="@style/Widget.MenuItem.TextView.Info"
                     android:paddingTop="@dimen/base_margin"
-                    android:text='@{viewModel.menuItems["pickles"].getFormattedPrice()}'
                     tools:text="$0.00" />
 
             </RadioGroup>
